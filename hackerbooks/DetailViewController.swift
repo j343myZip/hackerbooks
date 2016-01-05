@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tags: UILabel!
     @IBOutlet weak var authors: UILabel!
     @IBOutlet weak var favorito: UIBarButtonItem!
-   
+    @IBOutlet weak var ibook: UIBarButtonItem!
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
@@ -43,8 +43,14 @@ class DetailViewController: UIViewController {
             }
         }
     }
-    
+    @IBAction func openIbook(sender: AnyObject) {
+       // let protocolUrl = "http"
+        /*let url = "itms-books:"+(self.model?.urlPdf.absoluteString.stringByReplacingOccurrencesOfString( protocolUrl, withString: ""))!*/
+        UIApplication.sharedApplication().openURL((self.model?.urlPdf)!)
+        
+    }
     var model : AGTBook? {
+       
         get {
             return detailItem as? AGTBook
         }

@@ -77,7 +77,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="DB1-xc-q4B" firstAttribute="top" secondItem="CtQ-R9-1qo" secondAttribute="bottom" constant="5" id="vy3-xd-KEh"/>
+                                    <constraint firstItem="DB1-xc-q4B" firstAttribute="top" relation="lessThanOrEqual" secondItem="CtQ-R9-1qo" secondAttribute="bottom" constant="5" id="vy3-xd-KEh"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -88,6 +88,11 @@
                         </constraints>
                     </view>
                     <toolbarItems>
+                        <barButtonItem title="Open" id="TfW-4O-Cqa">
+                            <connections>
+                                <action selector="openIbook:" destination="JEX-9P-axG" id="113-ou-A57"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Z2a-ki-92p"/>
                         <barButtonItem style="plain" systemItem="add" id="LKc-4q-OZr">
                             <color key="tintColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,6 +112,7 @@
                     <connections>
                         <outlet property="authors" destination="ApK-jq-Cvi" id="3cQ-6p-AvI"/>
                         <outlet property="favorito" destination="LKc-4q-OZr" id="xXn-zM-EUM"/>
+                        <outlet property="ibook" destination="TfW-4O-Cqa" id="p9m-qq-7NP"/>
                         <outlet property="image" destination="ngx-ld-QBS" id="tym-1M-po2"/>
                         <outlet property="tags" destination="Lxg-NZ-yBp" id="zId-t4-mMZ"/>
                         <outlet property="titulo" destination="5so-0p-QmE" id="w4F-eq-Vzl"/>
@@ -128,12 +134,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANW-rF-72V">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANW-rF-72V">
+                                <rect key="frame" x="20" y="64" width="560" height="472"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yA0-O2-xJB">
-                                <rect key="frame" x="282" y="291" width="37" height="37"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yA0-O2-xJB">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dcw-XS-h12">
                                         <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
@@ -163,7 +169,6 @@
                             <constraint firstItem="ANW-rF-72V" firstAttribute="leading" secondItem="zvo-tB-zIF" secondAttribute="leadingMargin" id="H24-wn-dAi"/>
                             <constraint firstItem="ANW-rF-72V" firstAttribute="top" secondItem="Kpc-MF-4fO" secondAttribute="bottom" id="Lkz-xW-gIi"/>
                             <constraint firstItem="yA0-O2-xJB" firstAttribute="centerX" secondItem="zvo-tB-zIF" secondAttribute="centerX" id="eUg-eO-Rye"/>
-                            <constraint firstItem="ehy-O9-PoT" firstAttribute="top" secondItem="ANW-rF-72V" secondAttribute="bottom" id="eoA-XQ-hXV"/>
                             <constraint firstItem="ANW-rF-72V" firstAttribute="centerX" secondItem="zvo-tB-zIF" secondAttribute="centerX" id="tRk-SJ-wyM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ANW-rF-72V" secondAttribute="trailing" id="ylC-r3-08B"/>
                         </constraints>
@@ -262,6 +267,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>
